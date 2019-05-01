@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="HomeIoTHub.Views.MenuPage"
+             Visual="Material">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding Pages}" SelectionChangedCommand="{Binding OnItemSelected}" SelectionMode="Single" SelectedItem="{Binding SelectedItem}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                        <Frame BackgroundColor="LightBlue" Padding="16" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center">
+                            <StackLayout>
+                                <forms:CachedImage Source="{Binding ImageUri}"  HeightRequest="100" WidthRequest="100"/>
+                                <Label Text="{Binding Title}" HeightRequest="30" HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
