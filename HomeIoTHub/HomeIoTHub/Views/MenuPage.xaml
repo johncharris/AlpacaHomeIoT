@@ -3,18 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="HomeIoTHub.Views.MenuPage"
-             Visual="Material">
+             Visual="Material"
+             BackgroundColor="Khaki">
     <ContentPage.Content>
         <StackLayout>
             <CollectionView ItemsSource="{Binding Pages}" SelectionChangedCommand="{Binding OnItemSelected}" SelectionMode="Single" SelectedItem="{Binding SelectedItem}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                        <Frame BackgroundColor="LightBlue" Padding="16" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Grid Visual="Material">
+                        <Frame  Padding="16" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center">
                             <StackLayout>
                                 <forms:CachedImage Source="{Binding ImageUri}"  HeightRequest="100" WidthRequest="100"/>
                                 <Label Text="{Binding Title}" HeightRequest="30" HorizontalOptions="Center" />
-                            </StackLayout>
+                                    <Button Text="Click Me" Visual="Material" />
+                                </StackLayout>
                         </Frame>
                         </Grid>
                     </DataTemplate>

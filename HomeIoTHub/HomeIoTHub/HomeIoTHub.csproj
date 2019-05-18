@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="LiveXAML" Version="2.1.72" />
+    <PackageReference Include="MQTTnet.Extensions.ManagedClient" Version="3.0.0" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.5.922" />
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.346134-pre9" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />  

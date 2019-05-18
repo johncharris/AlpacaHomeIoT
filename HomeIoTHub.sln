@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeIoTHub.Android", "HomeI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeIoTHub.iOS", "HomeIoTHub\HomeIoTHub.iOS\HomeIoTHub.iOS.csproj", "{8388244C-A468-4568-8B0D-6514147161E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeIoTHub", "HomeIoTHub\HomeIoTHub\HomeIoTHub.csproj", "{6D48B61B-C9AC-420C-B765-0D398C320E92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeIoTHub", "HomeIoTHub\HomeIoTHub\HomeIoTHub.csproj", "{6D48B61B-C9AC-420C-B765-0D398C320E92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeIoTHub.Server", "HomeIoTHub.Server\HomeIoTHub.Server.csproj", "{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,18 @@ Global
 		{6D48B61B-C9AC-420C-B765-0D398C320E92}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{6D48B61B-C9AC-420C-B765-0D398C320E92}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{6D48B61B-C9AC-420C-B765-0D398C320E92}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Release|iPhone.Build.0 = Release|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FB2E3A39-84E8-4C32-AE53-CFBD67800DDE}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
