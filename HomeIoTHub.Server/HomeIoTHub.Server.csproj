@@ -7,9 +7,14 @@
 
 
   <ItemGroup>
+    <PackageReference Include="Hangfire.Core" Version="1.7.2" />
+    <PackageReference Include="Hangfire.MemoryStorage.Core" Version="1.4.0" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.7.2" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="MQTTnet.AspNetCore" Version="2.8.5" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="2.3.5" />
   </ItemGroup>
 
 </Project>

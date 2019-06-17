@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "296086843241",
+    "firebase_url": "https://home-iot-85d96.firebaseio.com",
+    "project_id": "home-iot-85d96",
+    "storage_bucket": "home-iot-85d96.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296086843241:android:6aa406ae6e9eebcc",
+        "android_client_info": {
+          "package_name": "com.aoz.HomeIoTHub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296086843241-outh6144f69fhmove0jt1brm6j4ph384.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzWxhDPzASG9QtRN6sGRdjrdzrrY1-cSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296086843241-outh6144f69fhmove0jt1brm6j4ph384.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

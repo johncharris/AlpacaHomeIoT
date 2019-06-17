@@ -8,6 +8,7 @@ using MQTTnet.Client.Options;
 using MQTTnet;
 using System.Threading.Tasks;
 using System.Text;
+using Plugin.FirebasePushNotification;
 
 namespace HomeIoTHub
 {
@@ -70,6 +71,8 @@ namespace HomeIoTHub
                 }
 
             });
+
+            CrossFirebasePushNotification.Current.Subscribe("dogwater");
         }
 
         void StopMqtt()

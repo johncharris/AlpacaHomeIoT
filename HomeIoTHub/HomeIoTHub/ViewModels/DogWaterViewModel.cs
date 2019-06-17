@@ -19,7 +19,10 @@ namespace HomeIoTHub.ViewModels
 
         private void OnDogwaterChanged(App app, string waterLevel)
         {
-            PercentOfWater = waterLevel;
+            int rawLevel = 0;
+            int.TryParse(waterLevel, out rawLevel);
+
+            PercentOfWater = ((rawLevel * 100) / 270).ToString(); 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PercentOfWater)));
         }
     }

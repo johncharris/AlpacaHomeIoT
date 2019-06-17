@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Hangfire;
+using Hangfire.MemoryStorage;
+using HomeIoTHub.Server.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,7 +37,20 @@ namespace HomeIoTHub.Server
             });
 
             //this adds a hosted mqtt server to the services
-            services.AddHostedMqttServer(builder => builder.WithDefaultEndpointPort(1883));
+            services.AddHostedMqttServer(builder => builder.WithDefaultEndpointPort(1883)
+            .WithApplicationMessageInterceptor(context =>
+            {
+                if (context.ApplicationMessage.Topic.StartsWith("dogwater"))
+                {
+                    BackgroundJob.Enqueue<IDogWaterService>(dogWaterService => dogWaterService.HandleDogWaterEvent(context.ApplicationMessage));
+                }
+            }));
+
+            services.AddHangfire(config => config.UseMemoryStorage(new MemoryStorageOptions
+            {
+                CountersAggregateInterval = TimeSpan.FromMilliseconds(500)
+            }
+            ));
 
             //this adds tcp server support based on System.Net.Socket
             services.AddMqttTcpServerAdapter();
@@ -43,6 +59,9 @@ namespace HomeIoTHub.Server
             services.AddMqttWebSocketServerAdapter();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSingleton<IDogWaterService, DogWaterService>();
+            services.AddSingleton<IFcmService, FcmService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +83,9 @@ namespace HomeIoTHub.Server
             app.UseCookiePolicy();
 
             app.UseMqttEndpoint();
+
+            app.UseHangfireDashboard();
+            app.UseHangfireServer();
 
             app.UseMvc();
         }
