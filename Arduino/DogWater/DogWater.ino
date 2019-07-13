@@ -27,12 +27,12 @@ const char* password = "alpacasrule";
 
 */
 
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <PubSubClient.h>
 
 // Update these with values suitable for your network.
 
-const char* mqtt_server = "192.168.39.182";
+const char* mqtt_server = "192.168.39.151";
 
 const char* topic = "dogwater/1";
 
@@ -73,16 +73,6 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print((char)payload[i]);
   }
   Serial.println();
-
-  // Switch on the LED if an 1 was received as first character
-  if ((char)payload[0] == '1') {
-    digitalWrite(BUILTIN_LED, LOW);   // Turn the LED on (Note that LOW is the voltage level
-    // but actually the LED is on; this is because
-    // it is active low on the ESP-01)
-  } else {
-    digitalWrite(BUILTIN_LED, HIGH);  // Turn the LED off by making the voltage HIGH
-  }
-
 }
 
 void reconnect() {
@@ -110,7 +100,6 @@ void reconnect() {
 }
 
 void setup() {
-  pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
   Serial.begin(115200);
   setup_wifi();
   client.setServer(mqtt_server, 1883);
@@ -125,9 +114,17 @@ void loop() {
   client.loop();
 
   long now = millis();
-  if (now - lastMsg > 2000) {
+  if (now - lastMsg > 1000) {
     lastMsg = now;
     value = analogRead(A0);
+    if (value > 4000) {
+      value = 0;
+    }
+    else
+    {
+      value = 1;
+    }
+    
     snprintf (msg, 50, "hello world #%ld", value);
     Serial.print("Publish message: ");
     Serial.println(msg);
