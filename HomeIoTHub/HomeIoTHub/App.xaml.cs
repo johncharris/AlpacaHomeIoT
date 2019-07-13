@@ -57,7 +57,10 @@ namespace HomeIoTHub
             mqttClient = new MqttFactory().CreateManagedMqttClient();
             Task.Run(async () =>
             {
-                await mqttClient.SubscribeAsync(new TopicFilterBuilder().WithTopic(Constants.DogWaterTopic).Build());
+                await mqttClient.SubscribeAsync(new TopicFilterBuilder()
+                    .WithTopic(Constants.DogWaterTopic)
+                    .WithTopic(Constants.PressureTopic)
+                    .Build());
                 await mqttClient.StartAsync(options);
             });
 
@@ -68,6 +71,10 @@ namespace HomeIoTHub
                 if (m.ApplicationMessage.Topic == Constants.DogWaterTopic)
                 {
                     MessagingCenter.Instance.Send(this, Constants.DogWaterTopic, payload);
+                }
+                if (m.ApplicationMessage.Topic == Constants.PressureTopic)
+                {
+                    MessagingCenter.Instance.Send(this, Constants.PressureTopic, payload);
                 }
 
             });

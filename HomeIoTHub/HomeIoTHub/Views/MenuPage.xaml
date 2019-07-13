@@ -7,7 +7,7 @@
              BackgroundColor="Khaki">
     <ContentPage.Content>
         <StackLayout>
-            <CollectionView ItemsSource="{Binding Pages}" SelectionChangedCommand="{Binding OnItemSelected}" SelectionMode="Single" SelectedItem="{Binding SelectedItem}">
+            <CollectionView ItemsSource="{Binding Pages}" SelectionMode="Single" SelectedItem="{Binding SelectedItem}" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Visual="Material">

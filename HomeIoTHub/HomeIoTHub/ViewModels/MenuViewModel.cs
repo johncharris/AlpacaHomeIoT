@@ -13,14 +13,18 @@ namespace HomeIoTHub.ViewModels
         public List<Page> Pages { get; set; } = new List<Page>
         {
             new Page("Dog Water", "DogWaterPage", "resource://HomeIoTHub.Resources.bowl.webp"),
-            new Page("Sprinklers", "SprinklersPage", "resource://HomeIoTHub.Resources.rainbird.jpg")
+            new Page("Sprinklers", "SprinklersPage", "resource://HomeIoTHub.Resources.rainbird.jpg"),
+            new Page("Pressure", "PressurePage", null)
         };
 
         public Command<Page> OnItemSelected => new Command<Page>(async page =>
         {
-            await (App.Current.MainPage as Shell).GoToAsync("dogwater");
-            SelectedItem = null;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedItem)));
+            if (SelectedItem != null)
+            {
+                await (App.Current.MainPage as Shell).GoToAsync(SelectedItem.UriPath);
+                SelectedItem = null;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedItem)));
+            }
         });
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -7,5 +7,6 @@ namespace HomeIoTHub
     static class Constants
     {
         public const string DogWaterTopic = "dogwater/1";
+        public const string PressureTopic = "pressure/1";
     }
 }

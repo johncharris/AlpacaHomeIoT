@@ -50,7 +50,7 @@
     <!-- 
         Styles and Resources 
     -->
-    <Shell.Resources>
+    <!--<Shell.Resources>
         <ResourceDictionary>
             <Color x:Key="NavigationPrimary">#2196F3</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -66,7 +66,7 @@
             </Style>
             <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
-    </Shell.Resources>
+    </Shell.Resources>-->
 
     <!-- Your Pages -->
     <ShellItem>

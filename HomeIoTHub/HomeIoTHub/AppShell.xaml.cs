@@ -13,6 +13,7 @@ namespace HomeIoTHub
             InitializeComponent();
 
             Routing.RegisterRoute("dogwater", typeof(DogWaterPage));
+            Routing.RegisterRoute("pressure", typeof(PressurePage));
 
         }
     }

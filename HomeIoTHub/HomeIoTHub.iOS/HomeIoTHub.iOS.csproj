@@ -140,12 +140,12 @@
       <Version>2.3.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
-      <Version>2.4.5.922</Version>
+      <Version>2.4.11.982</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.346134-pre9" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
     <PackageReference Include="Xamarin.Forms.Visual.Material">
-      <Version>4.0.0.346134-pre9</Version>
+      <Version>4.0.0.497661</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

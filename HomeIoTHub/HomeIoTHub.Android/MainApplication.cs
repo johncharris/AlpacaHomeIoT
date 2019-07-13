@@ -53,7 +53,6 @@ namespace HomeIoTHub.Droid
             CrossFirebasePushNotification.Current.OnTokenRefresh += (s, e) =>
             {
                 System.Diagnostics.Debug.WriteLine($"FCM Token: {e.Token}");
-                Debugger.Break();
             };
 
 
